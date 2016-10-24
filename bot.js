@@ -5,11 +5,20 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /flip/;
+      botRegex = /^I'm/;
+  var str = request.text;
+  
+  var newstring = [];
+var i;
+for (i = 4; i < str.length; i++) {
+  newstring[i] = str.substr(i,1);
+}
+  var finalstring = (newstring.toString()).replace(/,/g, '');
+  
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(finalstring);
     this.res.end();
   } else {
     console.log("don't care");
@@ -18,17 +27,13 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(string) {
   var botResponse, options, body, botReq;
 
   var randomnum = Math.floor((Math.random() * 10) + 1);
   if (randomnum > 5)
     {
-        botResponse = "heads";
-    }
-    else
-    {
-        botResponse = "tails";
+        botResponse = string;
     }
 
 
