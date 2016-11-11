@@ -6,6 +6,8 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   var botRegexSafe = /^Objectively/;
+  var botRegexSealSafe1 = /^You're fucking dead/;
+  var botRegexSealSafe2 = /^What the fuck/;
   var botRegexGood = /good/;
   var botRegexBad = /bad/;
   var botRegexWrong = /wrong/;
@@ -20,7 +22,7 @@ function respond() {
   var botRegexHard = /hard/;
   var botRegexSeal = /fuck/;
 
-  if(request.text && botRegexSafe.test(request.text) == false) {
+  if(request.text && botRegexSafe.test(request.text) == false && botRegexSealSafe1.test(request.text) == false && botRegexSealSafe2.test(request.text) == false) {
   
   if(request.text && botRegexGood.test(request.text)) {
     this.res.writeHead(200);
