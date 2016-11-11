@@ -20,7 +20,7 @@ function respond() {
   var botRegexSpag = /spaghetti/;
   var botRegexGreat = /great/;
   var botRegexHard = /hard/;
-  var botRegexSeal = /fuck/;
+  var botRegexSeal = /jew/;
 
   if(request.text && botRegexSafe.test(request.text) == false && botRegexSealSafe1.test(request.text) == false && botRegexSealSafe2.test(request.text) == false) {
   
