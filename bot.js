@@ -4,22 +4,32 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
-  botRegexGood = /good/;
-  botRegexBad = /bad/;
+  var request = JSON.parse(this.req.chunks[0]);
+  var botRegexGood = /good/;
+  var botRegexBad = /bad/;
+  var botRegexWrong = /wrong/;
+  var botRegexRight = /right/;
 
-  if(request.text && botRegexGood.test(request.text) == false) {
+  if(request.text && botRegexGood.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(botRegexGood);
+    postMessage("good");
     this.res.end();
   } 
   else if (request.text && botRegexBad.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(botRegexBad);
+    postMessage("bad");
     this.res.end();
   }
-  
-  
+  else if (request.text && botRegexWrong.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("wrong");
+    this.res.end();
+  }
+  else if (request.text && botRegexRight.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("right");
+    this.res.end();
+  }
   else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -27,10 +37,10 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(variable) {
   var botResponse, options, body, botReq;
-
-        botResponse = "yee";
+  var Obj = "Objectively "
+        botResponse = Obj.concat(variable);
 
 
   options = {
