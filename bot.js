@@ -10,6 +10,12 @@ function respond() {
   var botRegexBad = /bad/;
   var botRegexWrong = /wrong/;
   var botRegexRight = /right/;
+  var botRegexEz = /ez/
+  var botRegexEasy = /easy/
+  var botRegexGay = /gay/
+  var botRegexFaggot = /faggot/
+  var botRegexSame = /same/
+  var botRegexHard = /hard/
 
   if(request.text && botRegexSafe.test(request.text) == false) {
   
@@ -31,6 +37,36 @@ function respond() {
   else if (request.text && botRegexRight.test(request.text)) {
     this.res.writeHead(200);
     postMessage("right");
+    this.res.end();
+  }
+    else if (request.text && botRegexEz.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("ez");
+    this.res.end();
+  }
+    else if (request.text && botRegexEasy.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("easy");
+    this.res.end();
+  }
+    else if (request.text && botRegexGay.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("gay");
+    this.res.end();
+  }
+    else if (request.text && botRegexFaggot.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("a faggot");
+    this.res.end();
+  }
+    else if (request.text && botRegexSame.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("same");
+    this.res.end();
+  }
+    else if (request.text && botRegexHard.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("hard");
     this.res.end();
   }
   else {
