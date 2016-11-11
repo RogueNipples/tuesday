@@ -5,11 +5,14 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
+  var botRegexSafe = /^Objectively/;
   var botRegexGood = /good/;
   var botRegexBad = /bad/;
   var botRegexWrong = /wrong/;
   var botRegexRight = /right/;
 
+  if(request.text && botRegexSafe.test(request.text) == false) {
+  
   if(request.text && botRegexGood.test(request.text)) {
     this.res.writeHead(200);
     postMessage("good");
@@ -34,6 +37,7 @@ function respond() {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
+  }
   }
 }
 
