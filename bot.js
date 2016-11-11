@@ -5,13 +5,22 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-  botRegex = /yee/;
+  botRegexGood = /good/;
+  botRegexBad = /bad/;
 
-  if(request.text && botRegex.test(request.text) == false) {
+  if(request.text && botRegexGood.test(request.text) == false) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(botRegexGood);
     this.res.end();
-  } else {
+  } 
+  else if (request.text && botRegexBad.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(botRegexBad);
+    this.res.end();
+  }
+  
+  
+  else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
