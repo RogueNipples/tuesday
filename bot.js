@@ -134,8 +134,7 @@ function postMessage(variable) {
 
 function postMessage2(variable) {
   var botResponse, options, body, botReq;
-  var Obj = "Objectively "
-        botResponse = Obj.concat(variable);
+        botResponse = variable;
 
 
   options = {
