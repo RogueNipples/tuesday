@@ -8,7 +8,7 @@ function respond() {
   var botRegexSafe = /^Objectively/;
   var botRegexSealSafe1 = /^You're fucking dead/;
   var botRegexSealSafe2 = /^What the fuck/;
-  var botRegexGood = /good/;
+  var botRegexGood = / good/;
   var botRegexBad = /bad/;
   var botRegexWrong = /wrong/;
   var botRegexRight = /right/;
