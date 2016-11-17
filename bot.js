@@ -100,7 +100,7 @@ function respond() {
 
 function postMessage(variable) {
   var botResponse, options, body, botReq;
-  var Obj = "Correction: bjectively "
+  var Obj = "Correction: objectively "
         botResponse = Obj.concat(variable);
 
 
