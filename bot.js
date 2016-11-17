@@ -22,7 +22,7 @@ function respond() {
   var botRegexHard = / hard/;
   var botRegexSeal = /jew/;
 
-  if(request.name != "Cancer") {
+  if(request.name != "Cancer" && request.name != "ez") {
   
   if(request.text && botRegexGood.test(request.text)) {
     this.res.writeHead(200);
@@ -100,7 +100,7 @@ function respond() {
 
 function postMessage(variable) {
   var botResponse, options, body, botReq;
-  var Obj = "Objectively "
+  var Obj = "Correction: objectively "
         botResponse = Obj.concat(variable);
 
 
