@@ -22,7 +22,7 @@ function respond() {
   var botRegexHard = / hard/;
   var botRegexSeal = /jew/;
 
-  if(request.name != "Cancer" && request.name != "ez") {
+  if(request.name != "Cancer") {
   
   if(request.text && botRegexGood.test(request.text)) {
     this.res.writeHead(200);
