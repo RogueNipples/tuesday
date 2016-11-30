@@ -8,34 +8,15 @@ function respond() {
   var botRegexSafe = /^Objectively/;
   var botRegexSealSafe1 = /^You're fucking dead/;
   var botRegexSealSafe2 = /^What the fuck/;
-  var botRegexGood = /suck/;
-  var botRegexBad = /thick/;
-  var botRegexWrong = /cuck/;
-  var botRegexFuck = /fuck/;
-  var botRegexSeal = /jew/;
+  var botRegexCC = /cc/;
 
   if(request.name != "Cancer" && request.name != "ez") {
   
   if(request.text && botRegexGood.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Succ*");
+    postMessage("cc*");
     this.res.end();
   } 
-  else if (request.text && botRegexBad.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Thicc*");
-    this.res.end();
-  }
-  else if (request.text && botRegexWrong.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Cucc*");
-    this.res.end();
-  }
-    else if (request.text && botRegexFuck.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Fucc*");
-    this.res.end();
-  }
     else if (request.text && botRegexSeal.test(request.text)) {
     this.res.writeHead(200);
     postMessage2("What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life.");
@@ -52,7 +33,29 @@ function respond() {
 
 function postMessage(variable) {
   var botResponse, options, body, botReq;
-        botResponse = variable;
+  
+  var n = variable.indexOf("ck");
+    var m = variable.indexOf(" ", n);
+    var o = variable.lastIndexOf(" ", n);
+  var i;
+  var newstring = [];
+  
+  for (i = o; i < m+1; i++)
+    { 
+		if (variable.substr(i,1) == "k" && variable.substr(i-1,1) == "c")
+   		{
+     		newstring[i] = "c";
+   		}
+   		else
+   		{
+      		newstring[i] = variable.substr(i,1);
+   		}
+	}
+  var finalstring = (newstring.toString()).replace(/,/g, '')
+  
+  var extra = "*";
+  var complete = finalstring.concat(extra);
+        botResponse = complete;
 
 
   options = {
