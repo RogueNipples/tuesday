@@ -8,80 +8,26 @@ function respond() {
   var botRegexSafe = /^Objectively/;
   var botRegexSealSafe1 = /^You're fucking dead/;
   var botRegexSealSafe2 = /^What the fuck/;
-  var botRegexGood = / good/;
-  var botRegexBad = / bad/;
-  var botRegexWrong = / wrong/;
-  var botRegexRight = / right/;
-  var botRegexEz = / ez/;
-  var botRegexEasy = / easy/;
-  var botRegexGay = / gay/;
-  var botRegexFaggot = / faggot/;
-  var botRegexSame = / same/;
-  var botRegexSpag = / spaghetti/;
-  var botRegexGreat = / great/;
-  var botRegexHard = / hard/;
+  var botRegexGood = /suck/;
+  var botRegexBad = /thick/;
+  var botRegexWrong = /cuck/;
   var botRegexSeal = /jew/;
 
   if(request.name != "Cancer" && request.name != "ez") {
   
   if(request.text && botRegexGood.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("good");
+    postMessage("Succ*");
     this.res.end();
   } 
   else if (request.text && botRegexBad.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("bad");
+    postMessage("Thicc*");
     this.res.end();
   }
   else if (request.text && botRegexWrong.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("wrong");
-    this.res.end();
-  }
-  else if (request.text && botRegexRight.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("right");
-    this.res.end();
-  }
-    else if (request.text && botRegexEz.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("ez");
-    this.res.end();
-  }
-    else if (request.text && botRegexEasy.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("easy");
-    this.res.end();
-  }
-    else if (request.text && botRegexGay.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("gay");
-    this.res.end();
-  }
-    else if (request.text && botRegexFaggot.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("a faggot");
-    this.res.end();
-  }
-    else if (request.text && botRegexSame.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("same");
-    this.res.end();
-  }
-    else if (request.text && botRegexHard.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("hard");
-    this.res.end();
-  }
-    else if (request.text && botRegexSpag.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("spaghetti");
-    this.res.end();
-  }
-    else if (request.text && botRegexGreat.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("great");
+    postMessage("Cucc*");
     this.res.end();
   }
     else if (request.text && botRegexSeal.test(request.text)) {
@@ -100,8 +46,7 @@ function respond() {
 
 function postMessage(variable) {
   var botResponse, options, body, botReq;
-  var Obj = "Correction: objectively "
-        botResponse = Obj.concat(variable);
+        botResponse = variable;
 
 
   options = {
