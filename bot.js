@@ -8,13 +8,14 @@ function respond() {
   var botRegexSafe = /^Objectively/;
   var botRegexSealSafe1 = /^You're fucking dead/;
   var botRegexSealSafe2 = /^What the fuck/;
+	var botRegexSeal = /jew/;
   var botRegexCC = /ck/;
 
   if(request.name != "Cancer" && request.name != "ez") {
   
-  if(request.text && botRegexGood.test(request.text)) {
+  if(request.text && botRegexCC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("cc*");
+    postMessage(request);
     this.res.end();
   } 
     else if (request.text && botRegexSeal.test(request.text)) {
