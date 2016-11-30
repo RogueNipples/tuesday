@@ -55,6 +55,10 @@ function postMessage(variable) {
    	{
      		newstring[i] = "c";
    	}
+	else if (variable.substr(i,1) == "?")
+   	{
+     		newstring[i] = "!";
+   	}   
    	else
    	{
       		newstring[i] = variable.substr(i,1);
