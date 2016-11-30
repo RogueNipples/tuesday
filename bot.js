@@ -11,6 +11,7 @@ function respond() {
   var botRegexGood = /suck/;
   var botRegexBad = /thick/;
   var botRegexWrong = /cuck/;
+  var botRegexFuck = /fuck/;
   var botRegexSeal = /jew/;
 
   if(request.name != "Cancer" && request.name != "ez") {
@@ -28,6 +29,11 @@ function respond() {
   else if (request.text && botRegexWrong.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Cucc*");
+    this.res.end();
+  }
+    else if (request.text && botRegexFuck.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Fucc*");
     this.res.end();
   }
     else if (request.text && botRegexSeal.test(request.text)) {
