@@ -57,7 +57,7 @@ function postMessage(variable) {
   
   var extra = "*";
   var complete = finalstring.concat(extra);
-        botResponse = complete;
+        botResponse = finalstring;
 
 
   options = {
