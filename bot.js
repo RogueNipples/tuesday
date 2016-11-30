@@ -5,7 +5,6 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
-  var botRegexSafe = /^Objectively/;
   var botRegexSealSafe1 = /^You're fucking dead/;
   var botRegexSealSafe2 = /^What the fuck/;
 	var botRegexSeal = /jew/;
@@ -15,7 +14,7 @@ function respond() {
   
   if(request.text && botRegexCC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(request);
+    postMessage(request.text);
     this.res.end();
   } 
     else if (request.text && botRegexSeal.test(request.text)) {
