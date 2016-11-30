@@ -8,7 +8,7 @@ function respond() {
   var botRegexSafe = /^Objectively/;
   var botRegexSealSafe1 = /^You're fucking dead/;
   var botRegexSealSafe2 = /^What the fuck/;
-  var botRegexCC = /cc/;
+  var botRegexCC = /ck/;
 
   if(request.name != "Cancer" && request.name != "ez") {
   
@@ -40,17 +40,19 @@ function postMessage(variable) {
   var i;
   var newstring = [];
   
-  for (i = o; i < m+1; i++)
+  for (i = o; i < m; i++)
     { 
-		if (variable.substr(i,1) == "k" && variable.substr(i-1,1) == "c")
-   		{
+	if (variable.substr(i,1) == "k" && variable.substr(i-1,1) == "c")
+   	{
      		newstring[i] = "c";
-   		}
-   		else
-   		{
+   	}
+   	else
+   	{
       		newstring[i] = variable.substr(i,1);
-   		}
-	}
+   	}
+}
+	
+	
   var finalstring = (newstring.toString()).replace(/,/g, '')
   
   var extra = "*";
