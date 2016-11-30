@@ -40,7 +40,16 @@ function postMessage(variable) {
   var i;
   var newstring = [];
   
-  for (i = o; i < m; i++)
+	if (m == -1)
+    {
+    var doot = variable.length;
+    }
+    else
+    {
+    var doot = m;
+    }
+	
+  for (i = o; i < doot; i++)
     { 
 	if (variable.substr(i,1) == "k" && variable.substr(i-1,1) == "c")
    	{
