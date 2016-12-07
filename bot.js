@@ -10,7 +10,7 @@ function respond() {
 	var botRegexSeal = /jew/;
   var botRegexCC = /ck/;
 
-  if(request.name != "CC" && request.name != "ez") {
+  if(request.name != "CC") {
   
   if(request.text && botRegexCC.test(request.text)) {
     this.res.writeHead(200);
