@@ -66,12 +66,17 @@ function postMessage(variable) {
 }
 	
 	
-  var finalstring = (newstring.toString()).replace(/,/g, '')
-  
-  if(finalstring == "succ"){
-	  var newFinalString = "S U C C";
+  var finalstring = (newstring.toString()).replace(/,/g, '');
+  var newFinalString;
+	
+  if(finalstring == "succ")
+  {
+	   newFinalString = "S U C C";
   }
-	else var newFinalString = finalstring;
+  else
+  {
+	  newFinalString = finalstring;
+  }
 		  
   
   var extra = "*";
