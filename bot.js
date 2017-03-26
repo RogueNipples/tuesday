@@ -68,8 +68,14 @@ function postMessage(variable) {
 	
   var finalstring = (newstring.toString()).replace(/,/g, '')
   
+  if(finalstring == "succ"){
+	  var newFinalString = "S U C C";
+  }
+	else var newFinalString = finalstring;
+		  
+  
   var extra = "*";
-  var complete = finalstring.concat(extra);
+  var complete = newFinalString.concat(extra);
         botResponse = complete;
 
 
