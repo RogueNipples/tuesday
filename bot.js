@@ -5,23 +5,20 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
-  var botRegexSealSafe1 = /^You're fucking dead/;
-  var botRegexSealSafe2 = /^What the fuck/;
-	var botRegexSeal = /jew/;
-  var botRegexCC = /ck/;
+  var botRegexER1 = /er /;
+  var botRegexER2 = /er$/;
 
-  if(request.name != "CC") {
+  if(request.name != "Bot 8") {
   
-  if(request.text && botRegexCC.test(request.text)) {
+  if(request.text && botRegexER1.test(request.text)) {
     this.res.writeHead(200);
     postMessage(request.text);
     this.res.end();
-  } 
-    else if (request.text && botRegexSeal.test(request.text)) {
+  }
+  else if(request.text && botRegexER2.test(request.text)) {
     this.res.writeHead(200);
-    postMessage2("What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life.");
-    postMessage2("You’re fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that’s just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little “clever” comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn’t, you didn’t, and now you’re paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You’re fucking dead, kiddo.");
-      this.res.end();
+    postMessage(request.text);
+    this.res.end();
   }
   else {
     console.log("don't care");
@@ -34,54 +31,27 @@ function respond() {
 function postMessage(variable) {
   var botResponse, options, body, botReq;
   
-  var n = variable.indexOf("ck");
+var m,n,o;	
+	
+    var n = variable.indexOf("er");
+    if (variable.indexOf(" ", n) == -1) {
+    m = variable.length;
+    }
+    else {
     var m = variable.indexOf(" ", n);
+    }
+    if (variable.lastIndexOf(" ", n) == -1) {
+    o = 0;
+    }
+    else {
     var o = variable.lastIndexOf(" ", n);
-  var i;
-  var newstring = [];
-  
-	if (m == -1)
-    {
-    var doot = variable.length;
     }
-    else
-    {
-    var doot = m;
-    }
+    var wordlength = m-o;
+    var substring = variable.substr(o,wordlength);
+    
+    var finalstring = substring.concat("? I barely know her!")
 	
-  for (i = o; i < doot; i++)
-    { 
-	if (variable.substr(i,1) == "k" && variable.substr(i-1,1) == "c")
-   	{
-     		newstring[i] = "c";
-   	}
-	else if (variable.substr(i,1) == "?")
-   	{
-     		newstring[i] = "!";
-   	}   
-   	else
-   	{
-      		newstring[i] = variable.substr(i,1);
-   	}
-}
-	
-	
-  var finalstring = (newstring.toString()).replace(/,/g, '');
-  var newFinalString;
-	
-  if(finalstring == "succ")
-  {
-	   newFinalString = "S U C C";
-  }
-  else
-  {
-	  newFinalString = finalstring;
-  }
-		  
-  
-  var extra = "*";
-  var complete = newFinalString.concat(extra);
-        botResponse = complete;
+        botResponse = finalstring;
 
 
   options = {
