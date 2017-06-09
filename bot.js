@@ -7,8 +7,9 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   var botRegexER1 = /er /;
   var botRegexER2 = /er$/;
-
-  if(request.name != "Bot 8") {
+  var x = Math.floor((Math.random() * 5) + 1);
+	
+  if(request.name != "Bot 8" && x > 4) {
   
   if(request.text && botRegexER1.test(request.text)) {
     this.res.writeHead(200);
