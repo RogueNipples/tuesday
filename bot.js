@@ -13,12 +13,12 @@ function respond() {
   
   if(request.text && botRegexER1.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(request.text);
+    postMessage1(request.text);
     this.res.end();
   }
   else if(request.text && botRegexER2.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(request.text);
+    postMessage2(request.text);
     this.res.end();
   }
   else {
@@ -29,12 +29,14 @@ function respond() {
   }
 }
 
-function postMessage(variable) {
+//==========================================================================================
+
+function postMessage1(variable) {
   var botResponse, options, body, botReq;
   
 var m,n,o;	
 	
-    var n = variable.indexOf("er");
+    var n = variable.indexOf("er ");
     if (variable.indexOf(" ", n) == -1) {
     m = variable.length;
     }
@@ -85,9 +87,31 @@ var m,n,o;
   botReq.end(JSON.stringify(body));
 }
 
+//==========================================================================================
 function postMessage2(variable) {
   var botResponse, options, body, botReq;
-        botResponse = variable;
+  
+var m,n,o;	
+	
+    var n = variable.lastIndexOf("er");
+    if (variable.indexOf(" ", n) == -1) {
+    m = variable.length;
+    }
+    else {
+    var m = variable.indexOf(" ", n);
+    }
+    if (variable.lastIndexOf(" ", n) == -1) {
+    o = 0;
+    }
+    else {
+    var o = variable.lastIndexOf(" ", n);
+    }
+    var wordlength = m-o;
+    var substring = variable.substr(o,wordlength);
+    
+    var finalstring = substring.concat("? I barely know her!")
+	
+        botResponse = finalstring;
 
 
   options = {
@@ -119,8 +143,7 @@ function postMessage2(variable) {
   });
   botReq.end(JSON.stringify(body));
 }
-
-
+//==========================================================================================
 
 
 
