@@ -21,20 +21,12 @@ function respond() {
   }
   else if(request.text && botRegex3.test(request.text)) {
     this.res.writeHead(200);
-    postMessage2("Monday: Whatever you want");
-    postMessage2("Tuesday: Tendies");
-    postMessage2("Wednesday: Subway");
-    postMessage2("Thursday: Arby's");
-    postMessage2("Friday: KFC");
+    postMessage2("Monday: Whatever you want\nTuesday: Tendies\nWednesday: Subway\nThursday: Arby's\nFriday: KFC");
     this.res.end();
   }
   else if(request.text && botRegex4.test(request.text)) {
     this.res.writeHead(200);
-    postMessage2("Monday: Whatever you want");
-    postMessage2("Tuesday: Tendies");
-    postMessage2("Wednesday: Subway");
-    postMessage2("Thursday: Arby's");
-    postMessage2("Friday: KFC");
+    postMessage2("Monday: Whatever you want\nTuesday: Tendies\nWednesday: Subway\nThursday: Arby's\nFriday: KFC");
     this.res.end();
   }
   else {
