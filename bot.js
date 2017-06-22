@@ -110,7 +110,7 @@ var butts = "It's the weekend, do whatever the fucc you want";
 
 //==================
 
-function postMessage1(input) {
+function postMessage2(input) {
   var botResponse, options, body, botReq;
 
         botResponse = input;
