@@ -5,56 +5,51 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
-  var botRegexER1 = /er\s/;
-  var botRegexER2 = /er$/;
-  var x = Math.floor((Math.random() * 5) + 1);
-	
-  if(request.name != "Bot 8" && x > 4) {
+  var botRegex1 = /^Tendies\?$/;
   
-  if(request.text && botRegexER1.test(request.text)) {
+  if(request.text && botRegex1.test(request.text)) {
     this.res.writeHead(200);
-    postMessage1(request.text);
+    postMessage1();
     this.res.end();
-  }
-  else if(request.text && botRegexER2.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage2(request.text);
-    this.res.end();
-  }
   else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
-  }
 }
 
 //==========================================================================================
 
-function postMessage1(variable) {
+function postMessage1() {
   var botResponse, options, body, botReq;
-  
-var m,n,o;	
-	
-    var n = variable.indexOf("er ");
-    if (variable.indexOf(" ", n) == -1) {
-    m = variable.length;
-    }
-    else {
-    var m = variable.indexOf(" ", n);
-    }
-    if (variable.lastIndexOf(" ", n) == -1) {
-    o = 0;
-    }
-    else {
-    var o = variable.lastIndexOf(" ", n);
-    }
-    var wordlength = m-o;
-    var substring = variable.substr(o,wordlength);
-    
-    var finalstring = substring.concat("? I barely know her!")
-	
-        botResponse = finalstring;
+
+var date = Date();
+var day = date.substr(0,3);
+else if (day == "Mon")
+{
+var butts = "Nope, it's My Choice Monday";
+}
+else if (day == "Tue")
+{
+var butts = "It's Tendie Tuesday!";
+}
+else if (day == "Wed")
+{
+var butts = "Nope, it's Subwednesday";
+}
+else if (day == "Thu")
+{
+var butts = "Nope, it's Arby's Thursday";
+}
+else if (day == "Fri")
+{
+var butts = "Nope, it's Kentucky Friday Chiccen";
+}
+else
+{
+var butts = "It's the weekend, do whatever the fucc you want";
+}
+        botResponse = butts;
 
 
   options = {
