@@ -45,7 +45,7 @@ var date = Date();
 var day = date.substr(0,3);
 if (day == "Mon")
 {
-var butts = "Nope, it's My Choice Monday";
+var butts = "IT'S MEAT MONDAY";
 }
 else if (day == "Tue")
 {
@@ -53,19 +53,19 @@ var butts = "It's Tendie Tuesday!";
 }
 else if (day == "Wed")
 {
-var butts = "Nope, it's Subwednesday";
+var butts = "It's Chipotle Wednesday!";
 }
 else if (day == "Thu")
 {
-var butts = "Nope, it's Arby's Thursday";
+var butts = "Thirsty Thursday, you're having coffee for lunch";
 }
 else if (day == "Fri")
 {
-var butts = "Nope, it's Kentucky Friday Chiccen";
+var butts = "Murphy's happy hour 5:30 for infinity hotdogs";
 }
 else
 {
-var butts = "It's the weekend, do whatever the fucc you want";
+var butts = "It's the weekend and you have free will, eat whatever you want";
 }
         botResponse = butts;
 
