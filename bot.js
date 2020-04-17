@@ -61,7 +61,7 @@ var butts = "Thirsty Thursday, you're having coffee for lunch";
 }
 else if (day == "Fri")
 {
-var butts = "Murphy's happy hour 5:30 for infinity hotdogs";
+var butts = "It's Kroger Self-Rising Crust Pizza Friday!";
 }
 else
 {
